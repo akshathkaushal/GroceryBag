@@ -1,0 +1,38 @@
+<style>
+  input {max-width: 20em;}
+</style>
+
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+
+<div class="container col-lg-12 block">
+<h2>Log In</h2>
+  <form method="post" class="form-horizontal">
+      {% csrf_token %}
+      <div class="col-6">
+        {{ form.username|as_crispy_field }}
+      
+        {{ form.password|as_crispy_field }}
+        <button type="submit" class="btn btn-success">Login</button>
+      </div>
+    
+    
+  </form>
+</div>
+{% endblock %}
+
+<!--
+<form method="post">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <p><a href="/register/">Sign up</a></p>
+  <button type="submit">Log In</button>
+</form>
+-->

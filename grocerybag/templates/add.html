@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <form action="", method="post" class="form-horizontal" style="margin: 2em;">
+        {% csrf_token %}
+        <div class="col-6">
+            {{ form.name|as_crispy_field }}
+            {{ form.quantity|as_crispy_field }}
+            {{ form.unit|as_crispy_field }}
+            {{ form.status|as_crispy_field }}
+            {{ form.date|as_crispy_field }}
+            <button type="submit" class="btn btn-success">Confirm</button>
+        </div>
+    </form>
+
+{% endblock %}
+
+<!--<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    <div class="col-6">
+      {{ form.username|as_crispy_field }}
+    
+      {{ form.password|as_crispy_field }}
+      <button type="submit" class="btn btn-success">Login</button>
+    </div>
+</form>-->
